@@ -1,5 +1,7 @@
 Simple Raspberry Pi MMAL project
 
+Starting from a 2014-09-09-wheezy-raspbian.img this now compiles.  A couple of lines have had to be commented out so the functionality is reduced.
+
 Build
 -----
 0. Install pre-required packages

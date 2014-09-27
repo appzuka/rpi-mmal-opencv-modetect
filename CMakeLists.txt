@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 2.8)
 
 SET(COMPILE_DEFINITIONS -Werror)
+SET(CMAKE_C_FLAGS  "-lpthread -lrt -lm -lfreetype" ) # Added to allow compilation under 2014-09-09-wheezy-raspbian.img
 
 include_directories(/opt/vc/include)
 include_directories(/opt/vc/include/interface/vcos/pthreads)

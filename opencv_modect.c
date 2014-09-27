@@ -1,6 +1,7 @@
 /* 
  * File:   opencv_modect.c
- * Author: lee@sodnpoo.com
+ * Forked from https://github.com/sodnpoo/rpi-mmal-opencv-modetect by lee@sodnpoo.com
+ * Altered to allow compilation under 2014-09-09-wheezy-raspbian.img
  */
 
 #include <stdio.h>
@@ -11,7 +12,7 @@
 #include <opencv2/objdetect/objdetect.hpp>
 #include <opencv2/highgui/highgui_c.h>
 #include <opencv2/imgproc/imgproc.hpp>
-#include <opencv2/video/video.hpp>
+/* #include <opencv2/video/video.hpp> removed to allow compilation under 2014-09-09-wheezy-raspbian.img */
 
 #include "bcm_host.h"
 #include "interface/vcos/vcos.h"
@@ -509,7 +510,7 @@ int main(int argc, char** argv) {
           cvSub(back, fore, sub, NULL);
           cvCopy(fore, back, NULL);
           cvErode(sub, sub, NULL, 1);
-          cvCanny(sub, sub, 20, 60, 3);
+  /*        cvCanny(sub, sub, 20, 60, 3); removed to allow compilation under 2014-09-09-wheezy-raspbian.img */
 /*
           //DUMP steps to files
           char fn[256];
@@ -534,5 +535,7 @@ int main(int argc, char** argv) {
     }
 
     return 0;
+
+
 }
 
